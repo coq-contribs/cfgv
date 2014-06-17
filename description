@@ -1,0 +1,22 @@
+Name: CFGV
+Title: Generic Proofs about Alpha Equality and Substitution
+Url: http://www.nuprl.org/html/CFGVLFMTP2014/
+Description: Please read the following paper:
+http://www.nuprl.org/html/CFGVLFMTP2014/CFGV.pdf
+Keywords: generic programming
+variable bindings
+context free grammars
+substitution
+alpha equality
+equivariance
+Category: Computer Science/Lambda Calculi
+Author: Abhishek
+Email: abhishek.anand.iitg@gmail.com
+Homepage: http://www.cs.cornell.edu/~aa755/
+Institution: Cornell University
+Author: Vincent Rahli
+Email: vincent.rahli@gmail.com
+Homepage: http://www.cs.cornell.edu/~rahli/
+Institution: Cornell University
+Require: 
+License: LGPL
