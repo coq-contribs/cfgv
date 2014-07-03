@@ -23,6 +23,8 @@
 
 *)
 Require Export AssociationList.
+Require Import Omega.
+
 (** printing #  $\times$ #×# *)
 (** printing &  $\times$ #×# *)
 

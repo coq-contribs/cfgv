@@ -22,9 +22,13 @@
   Authors: Abhishek Anand & Vincent Rahli
 
 *)
+
 Require Export CFGV.
+Require Import Omega.
 (** printing #  $\times$ #×# *)
 (** printing &  $\times$ #×# *)
+
+Global Set Asymmetric Patterns.
 
 Set Implicit Arguments.
 (* It is possible to make the typing more precise at the cost
@@ -37,6 +41,7 @@ Set Implicit Arguments.
  kind of production rule *)
 (** CatchFileBetweenTagsTermStart*)
 Section Gram. Context  {G : CFGV}.
+
 Inductive Term: (GSym G) -> Type :=
 | tleaf : forall (T : Terminal G), 
     (tSemType G T) -> Term (gsymT  T)
@@ -518,7 +523,7 @@ Proof.
   GInduction; intros; allsimpl; try omega.
 Qed.
 
-Definition mcase := snd.
+Definition mcase := @snd.
 Definition tcase {A B C : Type}
   := fun t:A*B*C => fst (fst t).
 Definition pcase {A B C : Type}

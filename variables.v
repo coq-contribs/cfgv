@@ -25,6 +25,7 @@
 
 
 Require Export list.
+Require Import Omega.
 
 (** printing #  $\times$ #×# *)
 (** printing <=>  $\Leftrightarrow$ #&hArr;# *)

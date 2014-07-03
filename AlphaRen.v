@@ -23,6 +23,7 @@
 
 *)
 Require Export AlphaEqProps.
+Require Import Omega.
 Set Implicit Arguments.
 
 (* [lVars] is explicitly a function on [vc].

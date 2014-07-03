@@ -23,9 +23,9 @@
 
 *)
 
-
 Require Export UsefulTypes.
 Require Export bin_rels.
+Require Import Omega.
 
 Fixpoint LIn {A : Type} (a:A) (l:list A) : [univ] :=
   match l with
@@ -2795,9 +2795,9 @@ Lemma FilterLIn : forall
 forall x l, LIn x (filter f l) <=> LIn x l # f x = true.
 Proof.
   induction l; simpl.
-  intuition.
+  dintuition.
   intros.
-  case_eq (f a); intros; simpl; intuition congruence.
+  case_eq (f a); intros; simpl; dintuition congruence.
 Qed.
 
 Lemma monotoneFilter:

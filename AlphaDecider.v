@@ -22,9 +22,10 @@
   Authors: Abhishek Anand & Vincent Rahli
 
 *)
+
 Set Implicit Arguments.
 Require Export AlphaEqProps.
-
+Require Import Omega.
 
 
 Ltac EqDecRefl :=

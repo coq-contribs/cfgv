@@ -23,7 +23,6 @@
 
 *)
 
-
 (*Require Export SfLib.*)
 Require Export Coq.Init.Notations.
 Require Export tactics.
@@ -32,7 +31,7 @@ Require Export Basics.
 Require Export Bool.
 Require Export Arith.
 Require Export Arith.EqNat.
-Require Omega.
+Require Import Omega.
 
 
 (* Prop/Type exists depending on the switch universe-type.v/universe-prop.v *)
@@ -661,7 +660,7 @@ Qed.
  Let projT {A : Type} {x: A} (dec: Deq A) 
   {P:A -> Type} (exP: sigT P) (def:P x) : P x :=
    match exP with
-     | existT x' prf =>
+     | existT _ x' prf =>
        match dec x' x with
          | left eqprf => eq_rect x' P prf x eqprf
          | _ => def

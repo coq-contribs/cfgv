@@ -46,8 +46,10 @@ TIMER=$(if $(TIMED), $(STDTIME), $(TIMECMD))
 #                        #
 ##########################
 
-COQLIBS?= -R . CFGV
-COQDOCLIBS?=-R . CFGV
+COQLIBS?=\
+  -R . CFGV
+COQDOCLIBS?=\
+  -R . CFGV
 
 ##########################
 #                        #
@@ -100,7 +102,6 @@ VFILES:=variables.v\
   SubstAuxAlphaEq.v\
   StringGrammar.v\
   SSubst.v\
-  RenameOld.v\
   list.v\
   LibTactics.v\
   LetrecFEx.v\
@@ -244,31 +245,34 @@ Makefile: Make
 #                 #
 ###################
 
-%.vo %.glob: %.v
+$(VOFILES): %.vo: %.v
 	$(COQC) $(COQDEBUG) $(COQFLAGS) $*
 
-%.vi: %.v
+$(GLOBFILES): %.glob: %.v
+	$(COQC) $(COQDEBUG) $(COQFLAGS) $*
+
+$(VFILES:.v=.vi): %.vi: %.v
 	$(COQC) -quick $(COQDEBUG) $(COQFLAGS) $*
 
-%.g: %.v
+$(GFILES): %.g: %.v
 	$(GALLINA) $<
 
-%.tex: %.v
+$(VFILES:.v=.tex): %.tex: %.v
 	$(COQDOC) $(COQDOCFLAGS) -latex $< -o $@
 
-%.html: %.v %.glob
+$(HTMLFILES): %.html: %.v %.glob
 	$(COQDOC) $(COQDOCFLAGS) -html $< -o $@
 
-%.g.tex: %.v
+$(VFILES:.v=.g.tex): %.g.tex: %.v
 	$(COQDOC) $(COQDOCFLAGS) -latex -g $< -o $@
 
-%.g.html: %.v %.glob
+$(GHTMLFILES): %.g.html: %.v %.glob
 	$(COQDOC) $(COQDOCFLAGS)  -html -g $< -o $@
 
-%.v.d: %.v
+$(addsuffix .d,$(VFILES)): %.v.d: %.v
 	$(COQDEP) $(COQLIBS) "$<" > "$@" || ( RV=$$?; rm -f "$@"; exit $${RV} )
 
-%.v.beautified:
+$(addsuffix .beautified,$(VFILES)): %.v.beautified:
 	$(COQC) $(COQDEBUG) $(COQFLAGS) -beautify $*
 
 # WARNING
