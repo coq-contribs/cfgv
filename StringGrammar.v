@@ -38,7 +38,7 @@ Require Import CFGV.
 Record StringVarSpec := mksvs {
   vname : String.string;
   subTNonTerminal : String.string;
-  vSemType :  {T:Type $ VarType T}
+  vSemType :  {T:Type $ VarType}
 }.
 
 Record Terminal := mkst {
