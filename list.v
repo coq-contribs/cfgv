@@ -3055,7 +3055,7 @@ Proof.
   repnd; cpx.
   dorn Hyp0; subst; cpx;
   [|apply IHlen in Hyp0; dands; cpx; 
-      rewrite <- NPeano.Nat.add_succ_r ; cpx].
+      rewrite <- Nat.add_succ_r ; cpx].
   dands; cpx.
   introv Hgt Hlt.
   SetReasoning.

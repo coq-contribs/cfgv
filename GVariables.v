@@ -210,7 +210,7 @@ Proof.
     apply lForallSame in IHl.
     eapply implies_lforall; eauto.
     introv H Hlt; allsimpl; cpx.
-    apply NPeano.Nat.max_le_compat_l with (p:= a) in Hlt.
+    apply Nat.max_le_compat_l with (p:= a) in Hlt.
     pose proof (Max.le_max_r a a0).
     omega.
 Qed.

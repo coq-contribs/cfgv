@@ -352,8 +352,8 @@ match d with
 | inr _ => false
 end.
   
-Notation deq_nat := NPeano.Nat.eq_dec.
-Hint Resolve NPeano.Nat.eq_dec : Deq.
+Notation deq_nat := Nat.eq_dec.
+Hint Resolve Nat.eq_dec : Deq.
 
 
 
@@ -507,7 +507,7 @@ Lemma Fin_decidable : forall (n:nat), Deq (Fin n).
 Proof.
   unfold Deq.
   intros.
-  destruct (NPeano.Nat.eq_dec (projT1 x) (projT1 y)) as [T|F];[left|right].
+  destruct (Nat.eq_dec (projT1 x) (projT1 y)) as [T|F];[left|right].
   - apply Fin_eq; auto.
   - intro Heq. destruct F. destruct x. destruct y.
     inverts Heq. allsimpl. reflexivity.
