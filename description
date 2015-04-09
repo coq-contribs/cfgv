@@ -1,7 +1,7 @@
 Name: CFGV
 Title: Generic Proofs about Alpha Equality and Substitution
 Url: http://www.nuprl.org/html/CFGVLFMTP2014/
-Description: Please read the following paper:
+Description: Please read the following paper
 http://www.nuprl.org/html/CFGVLFMTP2014/CFGV.pdf
 Keywords: generic programming
 variable bindings
