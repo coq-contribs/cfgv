@@ -67,7 +67,7 @@ Ltac notAlpha :=
     inverts Halc;
     EqDecSndEq;
     subst;
-    contradiction in
+    match goal with [ H : ?t <> ?t |- _ ] => elim H; reflexivity end in
   let Hseq := fresh  "Hseq" in
   let Hseqd := fresh  "Hseqd" in
   try(AlphaTac);
