@@ -965,6 +965,7 @@ Proof.
   induction sw as [|(l,r) sw Hind]; auto;[].
   intros. simpl.
   ddeq; subst; cpx.
+  subst; intuition.
 Qed.
 Lemma swapSwitch :
     (forall (gs : GSym G) (t : Term gs) (sw : Swapping vc),

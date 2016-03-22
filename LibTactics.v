@@ -48,6 +48,7 @@
 *)
 
 Set Implicit Arguments.
+Global Unset Regular Subst Tactic.
 
 (* ********************************************************************** *)
 (** * Additional notations for Coq *)

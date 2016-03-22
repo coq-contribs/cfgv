@@ -67,7 +67,7 @@ Ltac notAlpha :=
     inverts Halc;
     EqDecSndEq;
     subst;
-    match goal with [ H : ?t <> ?t |- _ ] => elim H; reflexivity end in
+    contradiction in
   let Hseq := fresh  "Hseq" in
   let Hseqd := fresh  "Hseqd" in
   try(AlphaTac);
@@ -353,7 +353,7 @@ Proof.
     rewrite Hseqd0. 
     allsimpl.
     introv Hisv Heq.
-    inverts Heq.
+    inverts keep Heq.
     cpx.
 - Case "tnode".
   destruct tb; [right; notAlpha;fail | |].
@@ -440,7 +440,7 @@ Proof.
     rewrite Hseqd0. 
     allsimpl.
     introv Hisv Heq.
-    inverts Heq.
+    inverts keep Heq.
     cpx; fail.
 
 
@@ -496,7 +496,7 @@ Proof.
     rewrite Hseqd0. 
     allsimpl.
     introv Hisv Heq.
-    inverts Heq.
+    inverts keep Heq.
     cpx; fail.
 
     EqDec p p0;[| right].
