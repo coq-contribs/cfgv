@@ -26,6 +26,7 @@
 Require Export UsefulTypes.
 Require Export bin_rels.
 Require Import Omega.
+Export Coq.Strings.String.StringSyntax.
 
 Fixpoint LIn {A : Type} (a:A) (l:list A) : [univ] :=
   match l with

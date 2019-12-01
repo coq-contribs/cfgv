@@ -216,10 +216,10 @@ Proof.
   rw <- memberb_din.
   rw <- memberb_din.
   rw memberb_app.
-  destructr (memberb DeqKey a0 vs1) as [m1 | m1]; simpl.
+  destructr (memberb DeqKey a0 vs1) as [|]; simpl.
   apply IHsub.
   rw <- memberb_din.
-  allsimpl. destruct (memberb DeqKey a0 vs2) as [m2 | m2];
+  allsimpl. destruct (memberb DeqKey a0 vs2) as [|];
   simpl; subst;
   try(rw IHsub); auto.
 Qed.

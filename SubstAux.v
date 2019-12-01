@@ -265,7 +265,7 @@ Proof.
     subst vcc.
     simpl. allunfold ALFindDef.
     remember (ALFind (DeqVtype vc) (SubFilter sub lf) v) as alf.
-    destruct alf as [als | aln].
+    destruct alf as [als |].
     + applysym AssociationList.ALFindFilterSome in Heqalf.
       repnd. rw Heqalf0; auto.
     + applysym AssociationList.ALFindFilterNone in Heqalf.
